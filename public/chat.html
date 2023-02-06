@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatCord App</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;300;600;900&family=Source+Sans+Pro:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  
+  <!-- Style -->
+  <link rel="stylesheet" href="./sass/custom.css">
+
+</head>
+
+
+
+<body class="bg-info"">
+
+    <main class="container d-flex align-items-center justify-content-center  alto-100 ">
+      <div class="col-12 rounded-5">
+        <div class="row bg-primary border border-dark rounded-top-2 " >
+          <div class="col-12  p-3 ">
+            <div class="row d-flex">
+              <div class="col-12 col-lg-9 pt-2">
+                <div class="row">
+                  <div class="col-4">
+                    <p class="h4 align-self-center flex-grow-1  text-white">
+                      Room Chat
+                    </p>
+                  </div>
+                  <div class="col-8">
+                    <img class="me-2" src="./img/javascripts.png" alt="" style="height: 30px; width: auto;" >
+                    <img class="me-2" src="./img/node.png" alt="" style="height: 30px; width: auto;" >
+                    <img class="me-2" src="./img/express.png" alt="" style="height: 30px; width: auto;" >
+                    <img class="me-2" src="./img/socket.png" alt="" style="height: 30px; width: auto;" >
+                    <img class="me-2" src="./img/boostrap.png" alt="" style="height: 30px; width: auto;" >
+                    <img class="me-2" src="./img/sass.png" alt="" style="height: 30px; width: auto;" >
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 d-flex justify-content-end  align-self-center ">
+                <a class="col-12 btn btn-dark text-decoration-none" role="button" href="index.html"> Salir de la Sala </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-2 col-md-12 pt-3 border border-dark  bg-secondary bg-gradient overflow-auto" style="height: 300px;">
+            <p class="text-white h3"> <span class="me-2 material-symbols-outlined">
+              forum
+              </span>Sala</p>
+            <p id="nombre-sala" class="text-center h4 display-1 text-white">Javascript</p>
+            <hr>
+            <p class="text-white h3"><span class="me-2 material-symbols-outlined">
+              group
+              </span >Usuarios
+            </p>
+            <ul id="usuarios" class="text-center list-unstyled text-white h5 display-2">
+
+            </ul>
+          </div>
+          <div class="mensaje-chat col-12 col-lg-10 col-md-12 bg-info overflow-auto border border-dark " style="height: 300px;" > 
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-2 pt-3 text-end bg-success border border-dark m-0 ">
+            <p id="usernameid" class=" m-0 text-white"> ... </p>
+          </div>
+          <div class="col-10">
+            <form id="formulario-chat">
+              <div class="row">
+                <div class="col-9 p-2  bg-primary border border-dark">
+                  <input 
+                  id="msg"
+                  class="form-control fw-semibold " 
+                  placeholder="Mensaje"
+                  required
+                  autocomplete="off" 
+                  type="text">
+                </div>
+                <div class="col-3 pt-2  bg-secondary border  border-dark">
+                  <button class="btn btn-warning w-100">Enviar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js" integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

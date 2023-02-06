@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;300;600;900&family=Source+Sans+Pro:wght@200;300;400&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="sass/custom.css" />
+
+		<title>RealTime Chat</title>
+	</head>
+	<body class="bg-info">
+		<div class="contenedor shadow-lg" >
+			<header class="header-contenedor text-center  text-white rounded-top bg-primary bg-opacity-100 bg-gradient">
+				<h1 class=""> Chat APP</h1>
+			</header>
+			<main class="main-contenedor bg-primary bg-opacity-75 bg-gradient">
+				<form action="chat.html" autocomplete="off"> 
+					<div class="form-group">
+						<label class="label text-white fw-semibold" for="username" >Nick</label>
+						<input
+                            class="input form-control fw-semibold"
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Ingrese su nick..."
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label class="label text-white fw-semibold" for="room">Sala</label>
+						<select class="input form-select fw-semibold" name="room" id="room">
+							<option selected value="JavaScript">Chile</option>
+							<option value="Python">México</option>
+							<option value="PHP">Argentina</option>
+							<option value="C#">Perú</option>
+							<option value="Ruby">España</option>
+							<option value="Java">Japon</option>
+						</select>
+					</div>
+					<button type="submit" class="w-100 btn bg-gradient btn-dark btn-lg ">Unirse al chat</button>
+				</form>
+			</main>
+		</div>
+	</body>
+</html>

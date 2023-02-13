@@ -20,62 +20,62 @@
 
 
 
-<body class="bg-info"">
+<body id="body" class="bg-info"">
 
-    <main class="container d-flex align-items-center justify-content-center  alto-100 ">
+    <main class="container-md d-flex align-items-center justify-content-center  alto-100 ">
       <div class="col-12 rounded-5">
-        <div class="row bg-primary border border-dark rounded-top-2 " >
-          <div class="col-12  p-3 ">
+        <div  class="row bg-primary border border-dark rounded-top-2 " > <!-- navbar -->
+          <div class="col-12  p-3 " id="nav">
             <div class="row d-flex">
               <div class="col-12 col-lg-9 pt-2">
                 <div class="row">
-                  <div class="col-4">
+                  <div class="col-4"> <!-- room chat -->
                     <p class="h4 align-self-center flex-grow-1  text-white">
                       Room Chat
                     </p>
                   </div>
-                  <div class="col-8">
-                    <img class="me-2" src="./img/javascripts.png" alt="" style="height: 30px; width: auto;" >
-                    <img class="me-2" src="./img/node.png" alt="" style="height: 30px; width: auto;" >
-                    <img class="me-2" src="./img/express.png" alt="" style="height: 30px; width: auto;" >
-                    <img class="me-2" src="./img/socket.png" alt="" style="height: 30px; width: auto;" >
-                    <img class="me-2" src="./img/boostrap.png" alt="" style="height: 30px; width: auto;" >
-                    <img class="me-2" src="./img/sass.png" alt="" style="height: 30px; width: auto;" >
+                  <div class="col-8" > <!-- imagenes -->
+                    <img class="me-2 mt-1" src="./img/javascripts.png" alt="JavaScript">
+                    <img class="me-2 mt-1" src="./img/node.png" alt="NodeJS" >
+                    <img class="me-2 mt-1" src="./img/express.png" alt="Express">
+                    <img class="me-2 mt-1" src="./img/socket.png" alt="Socket">
+                    <img class="me-2 mt-1" src="./img/boostrap.png" alt="Boostrap">
+                    <img class="me-2 mt-1" src="./img/sass.png" alt="SASS">
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-lg-3 d-flex justify-content-end  align-self-center ">
+              <div class="col-12 col-lg-3 d-flex justify-content-end  align-self-center "> <!-- boton salir de la sala -->
                 <a class="col-12 mt-1 btn btn-dark text-decoration-none" role="button" href="index.html"> Salir de la Sala </a>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12 col-lg-2 col-md-12 pt-3 border border-dark  bg-secondary bg-gradient overflow-auto" style="height: 300px;">
+        <div class="row"> <!-- usuarios conectados & chat -->
+          <div id="users" class="col-12 col-md-2  pt-3 border border-dark  bg-secondary bg-gradient overflow-auto alto-users alto-normal""> <!-- nombre de la sala y usuarios -->
             <p class="text-white h3"> <span class="me-2 material-symbols-outlined">
               forum
               </span>Sala</p>
-            <p id="nombre-sala" class="text-center h4 display-1 text-white">Javascript</p>
+            <p id="nombre-sala" class="text-center h4 display-1 text-success fw-bold">...</p> <!-- nombre de la sala -->
             <hr>
             <p class="text-white h3"><span class="me-2 material-symbols-outlined">
               group
               </span >Usuarios
             </p>
-            <ul id="usuarios" class="text-center list-unstyled text-white h5 display-2">
+            <ul id="usuarios" class="text-center list-unstyled text-success h5 display-2 fw-bolder"> <!-- lista de usuarios -->
 
             </ul>
           </div>
-          <div class="mensaje-chat col-12 col-lg-10 col-md-12 bg-info overflow-auto border border-dark " style="height: 300px;" > 
+          <div id="chat" class="chat-flotante mensaje-chat col-12 col-md-10 bg-info overflow-auto border border-dark alto-chat alto-normal " > <!-- chat mensajes -->
           </div>
         </div>
-        <div class="row ">
-          <div class="col-2 pt-3 d-none d-sm-block text-end bg-success border border-dark m-0 ">
+        <div class="row "> <!-- username & input & button -->
+          <div class="col-2 pt-3 d-none d-md-block text-end bg-success border border-dark m-0 "> <!-- username -->
             <p id="usernameid" class="m-0  text-white"> ... </p>
           </div>
-          <div class="col-12 col-sm-10">
-            <form id="formulario-chat">
-              <div class="row">
-                <div class="col-8 col-md-10 p-2  bg-primary border border-dark">
+          <div class="col-12 col-md-10 btn-flotante"> <!-- input & button -->
+            <form id="formulario-chat" class="">
+              <div class="row ">
+                <div class="col-8 col-md-10 p-2  bg-primary border border-dark"> <!-- input -->
                   <input 
                   id="msg"
                   class="form-control fw-semibold " 
@@ -84,7 +84,7 @@
                   autocomplete="off" 
                   type="text">
                 </div>
-                <div class="col-4 col-md-2 pt-2  bg-secondary border  border-dark">
+                <div class="col-4 col-md-2 pt-2  bg-secondary border  border-dark"> <!-- button -->
                   <button class="btn btn-warning w-100">Enviar</button>
                 </div>
               </div>

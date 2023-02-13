@@ -10,10 +10,12 @@ const io = new Server(server)
 
 app.use(express.static("public"))
 
+
 const botName = 'Room Chat BOT'
 
-
 io.on('connection', socket => {
+
+    // configuración de la sala
     socket.on('joinRoom', ({username, room}) => {
         const user = userJoin(socket.id, username, room);
 
@@ -27,11 +29,13 @@ io.on('connection', socket => {
         })
     })
 
+    // configuración de los mensajes
     socket.on('chatMessage', (msg) => {
         const user = getCurrentUser(socket.id);
         io.to(user.room).emit('message', formatMessage(user.username, msg));
     })
 
+    // configuración cuando un usuario se desconecta
     socket.on('disconnect', () => {
         const user = userLeave(socket.id);
         if(user) {

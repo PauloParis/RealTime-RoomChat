@@ -1,34 +1,13 @@
 const nombreSala = document.getElementById('nombre-sala');
 const listaUsuarios = document.getElementById('usuarios');
+const nombreSala2 = document.getElementById('nombre-sala2');
+const listaUsuarios2 = document.getElementById('usuarios2');
+
 const nickUsuario = document.getElementById('usernameid');
 const formularioChat = document.getElementById('formulario-chat');
 const mensajeChat = document.querySelector('.mensaje-chat');
 
-
-// --------- Tamaño Pantalla Configuración ---------------
-
-// se calculan los altos
-function AltoChat() {
-    let altoPantalla =  window.innerHeight; //total
-    let altoNavnar = nav.clientHeight; // navbar
-    let altoUsuarios  = users.clientHeight; // nombre de la sala y usuarios
-    let altoInput  = formularioChat.clientHeight // input & button
-    let altoChatMensajes = altoPantalla - altoNavnar - altoUsuarios - altoInput // chat mensajes
-    return altoChatMensajes;
-}
-// dependiendo del tamaño de la pantalla el alto de Chat Mensaje cambia
-function altopantalla() {
-    let altoChatMensajes = AltoChat();
-    if(window.innerWidth < 768) {
-        chat.style.setProperty('height', `${altoChatMensajes - 5}px`)
-    }
-    else {
-        chat.style.setProperty('height', '300px')
-    }
-}
-altopantalla() // se llama a la función 
-window.onresize = altopantalla; // para cuando hay un cambio en el tamaño
-
+const sidebarLabel = document.getElementById('sidebarLabel');
 
 
 // obtener username y room desde la url
@@ -71,7 +50,7 @@ formularioChat.addEventListener('submit', e => {
 // se crea la estructura de Chat Mensaje
 function outputMessage(message) {
     const div = document.createElement('div');
-    div.classList.add('mensaje');
+    div.classList.add('mensaje', 'mx-3', 'py-1');
     div.innerHTML = ` <p class="meta">
                           ${message.username} 
                             <span class="time">
@@ -87,13 +66,19 @@ function outputMessage(message) {
 // se añade el nombre de la sala al html
 function outPutRoomName(room) {
     nombreSala.innerHTML = room;
+    nombreSala2.innerHTML = room;
 }
 
 // se añade lista de usuarios conectados al html
 function outPutUsers(users) {
     listaUsuarios.innerHTML = 
     `
-    ${users.map(user => `<li>${user.username}</li>`)
+    ${users.map(user => `<li class="m-3">${user.username}</li>`)
+    .join('')}
+    `
+    listaUsuarios2.innerHTML = 
+    `
+    ${users.map(user => `<li class="m-3">${user.username}</li>`)
     .join('')}
     `
 }
@@ -101,4 +86,5 @@ function outPutUsers(users) {
 // se añade el username al html
 function outPutUserName(username) {
     nickUsuario.innerHTML = username;
+    sidebarLabel.innerHTML = username;
 }
